@@ -1,140 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript">
-			</script>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Home</title>
-	<base href="https://exosolutions.us/" />
-	<link rel="canonical" href="https://exosolutions.us/" />
-	
-	
-						<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="description" content="Home" />
-			<meta name="keywords" content="Home" />
-			
-	<!-- Facebook Open Graph -->
-		<meta property="og:title" content="Home" />
-			<meta property="og:description" content="Home" />
-			<meta property="og:image" content="https://exosolutions.us/gallery_gen/fd962a80b0a7c5aff21c518d2ab0a953_fit.png" />
-			<meta property="og:type" content="article" />
-			<meta property="og:url" content="https://exosolutions.us/" />
-		<!-- Facebook Open Graph end -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Exosphere Solutions — Cybersecurity and IT solutions for small and mid-sized businesses in the San Francisco Bay Area. HIPAA training, dark web monitoring, phishing assessments, and more." />
+  <title>Exosphere Solutions | Cybersecurity & IT — SF Bay Area</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-		<meta name="generator" content="Website Builder" />
-			<script src="js/common-bundle.js?ts=20250603053517" type="text/javascript"></script>
-	<script src="js/a188dda230d100e01ac7374ab1c64b94-bundle.js?ts=20250603053517" type="text/javascript"></script>
-	<link href="css/common-bundle.css?ts=20250603053517" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400&amp;subset=latin" rel="stylesheet" type="text/css" />
-	<link href="css/a188dda230d100e01ac7374ab1c64b94-bundle.css?ts=20250603053517" rel="stylesheet" type="text/css" id="wb-page-stylesheet" />
-	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="gallery/favicons/favicon-120x120.png"><link rel="icon" type="image/png" sizes="120x120" href="gallery/favicons/favicon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="152x152" href="gallery/favicons/favicon-152x152.png"><link rel="icon" type="image/png" sizes="152x152" href="gallery/favicons/favicon-152x152.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="gallery/favicons/favicon-180x180.png"><link rel="icon" type="image/png" sizes="180x180" href="gallery/favicons/favicon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="gallery/favicons/favicon-192x192.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="gallery/favicons/favicon-60x60.png"><link rel="icon" type="image/png" sizes="60x60" href="gallery/favicons/favicon-60x60.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="gallery/favicons/favicon-76x76.png"><link rel="icon" type="image/png" sizes="76x76" href="gallery/favicons/favicon-76x76.png"><link rel="icon" type="image/png" href="gallery/favicons/favicon.png">
-	<script type="text/javascript">
-	window.useTrailingSlashes = true;
-	window.disableRightClick = true;
-	window.currLang = 'en';
-</script>
-		
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.min.js"></script>
-	<![endif]-->
+    :root {
+      --bg: #09080f;
+      --surface: #100e1a;
+      --surface2: #17142a;
+      --accent: #a78bfa;
+      --accent2: #c4b5fd;
+      --accentbg: rgba(167, 139, 250, 0.1);
+      --accentborder: rgba(167, 139, 250, 0.25);
+      --text: #e8e4f8;
+      --muted: #7a7299;
+      --border: #1e1a33;
+      --yellow: #f5e642;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
 
-		<script type="text/javascript">
-		$(function () {
-});    </script>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    .nav {
+      background: rgba(9, 8, 15, 0.97);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-mark svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #09080f;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      gap: 4px;
+    }
+
+    .nav-mobile.open { display: flex; }
+
+    .nav-mobile a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile a.active { color: var(--accent); }
+
+    .nav-mobile .nav-mobile-cta {
+      margin-top: 12px;
+      background: var(--accent);
+      color: #09080f;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 40px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+      max-width: 820px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -120px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -80px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      width: fit-content;
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-eyebrow span {
+      font-size: 11px;
+      font-family: var(--mono);
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .hero-headline {
+      font-family: var(--mono);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .hero-headline em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-family: var(--mono);
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .pill.accent {
+      border-color: var(--accentborder);
+      color: var(--accent);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #09080f;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accentborder);
+      background: var(--accentbg);
+    }
+
+    /* ── STATS ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 6px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 64px 40px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* ── RISK CARDS ── */
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 800px;
+    }
+
+    .risk-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .risk-card:hover { border-color: var(--accentborder); }
+
+    .risk-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .risk-num {
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      padding-left: 12px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .risk-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      line-height: 1.4;
+    }
+
+    .risk-card p {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 12px;
+      line-height: 1.6;
+    }
+
+    /* ── HIPAA BANNER ── */
+    .hipaa-banner {
+      background: var(--surface2);
+      border: 1px solid rgba(245, 230, 66, 0.2);
+      border-radius: 10px;
+      padding: 24px 32px;
+      margin: 0 40px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hipaa-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: rgba(245, 230, 66, 0.07);
+      border: 1px solid rgba(245, 230, 66, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hipaa-text h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--yellow);
+      margin-bottom: 6px;
+    }
+
+    .hipaa-text p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── SERVICES ── */
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 800px;
+    }
+
+    .service-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .service-row:hover {
+      border-color: var(--accentborder);
+      background: var(--surface2);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: var(--accentbg);
+      border: 1px solid var(--accentborder);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .service-info { flex: 1; min-width: 0; }
+
+    .service-info h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .service-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .service-tag {
+      background: var(--accentbg);
+      border: 1px solid var(--accentborder);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-family: var(--mono);
+      color: var(--accent);
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-social {
+      width: 36px;
+      height: 36px;
+      border-radius: 7px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+
+    .footer-social:hover { border-color: var(--accentborder); }
+
+    .footer-social svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--muted);
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero {
+        padding: 48px 20px 48px;
+      }
+
+      .hero-headline { font-size: 28px; }
+      .hero-sub { font-size: 15px; }
+
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat { padding: 20px; }
+
+      .section { padding: 40px 20px; }
+
+      .risk-grid { grid-template-columns: 1fr; }
+
+      .hipaa-banner {
+        margin: 0 20px;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .service-row { flex-wrap: wrap; gap: 12px; }
+      .service-tag { align-self: flex-start; }
+
+      .footer { padding: 32px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline { font-size: 24px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero > * {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero > *:nth-child(2) { animation-delay: 0.12s; }
+    .hero > *:nth-child(3) { animation-delay: 0.19s; }
+    .hero > *:nth-child(4) { animation-delay: 0.26s; }
+    .hero > *:nth-child(5) { animation-delay: 0.33s; }
+  </style>
 </head>
+<body>
 
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="6" stroke="#09080f" stroke-width="1.5"/>
+            <path d="M9 4v5l3.5 2" stroke="#09080f" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        EXOSPHERE
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/resources/">Resources</a></li>
+      </ul>
+      <a href="/contact/" class="nav-cta">GET PROTECTED →</a>
+      <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile" id="mobile-nav">
+      <a href="/" class="active">Home</a>
+      <a href="/contact/">Contact</a>
+      <a href="/resources/">Resources</a>
+      <a href="/contact/" class="nav-mobile-cta">GET PROTECTED →</a>
+    </nav>
+  </header>
 
-<body class="site site-lang-en " ><div id="wb_root" class="root wb-layout-vertical"><div class="wb_sbg"></div><div id="wb_header_a188dda230d100e01ac7374ab1c64b94" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dda201095b4bec9ff3271d27df86" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec3dcc18e009002c4b5168f63869a" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper"><a href="https://exosolutions.us/"><img loading="lazy" alt="" src="gallery_gen/0c682ce6645e41d8dd342ce91160cca4_768x460_fit.png?ts=1748918118"></a></div></div></div><div id="a18ec6c64343000880a23f692d326f09" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec6c7690600af1fefd1595788cb61" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dda201095d116ba911db31eb005f" class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu"><a class="btn btn-default btn-collapser"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><ul class="hmenu" dir="ltr"><li class="wb_this_page_menu_item active"><a href="https://exosolutions.us/">Home</a></li><li><a href="Contacts/">Contact Us</a></li><li><a href="Resources/">Resources</a></li><li><a href="https://exosphereblog.blogspot.com/" target="_blank">Blog</a></li></ul><div class="clearfix"></div></div></div></div><div id="a18ec6c5fcbc005de2d5f58576725730" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec6c7b8f000909ca0dcf47b0a466f" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec6c7b8f001f7743ecdb016e15246" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a18ec6c7f53900a6e52777476261eb92" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.facebook.com/exosolutionsus" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#4267b2"><text x="129.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg></a></div></div></div></div></div><div id="a19187959bbc0040341b889b24edb279" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec6c94ab900f65bb90cac69f9c611" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap" style="height: 100%"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.linkedin.com/company/exosphere-solutions/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#2867b2"><text x="129.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg></a></div></div></div></div></div><div id="a18ecbb3c9c6004a4f74aa041e3731fc" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a18ec6c875000023959e1683254e3fc8" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.youtube.com/@ExosphereSolutions" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#ff0000"><text x="129.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg></a></div></div></div></div></div><div id="a18ecbb56724002735fe56315ee0be7a" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a18ecbb3b5eb00f2755111fee005a05d" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.yelp.com/biz/exosphere-solutions-martinez" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#ff1a1a"><text x="129.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg></a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div id="wb_main_a188dda230d100e01ac7374ab1c64b94" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191ca49388c006f105b9f4820fdd8e6" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-custom16"><span style="color:#ffffff;">Serving The San Francisco Bay Area</span></h2>
-</div><div id="a1920890edbf00da81ca476af8fb608f" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-custom16"><font color="#ffff2e">We Offer:<br>
-Cybersecurity Solutions (Plus HIPAA)<br>
-IT Solutions</font></h2>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span>SERVING THE SF BAY AREA</span>
+    </div>
+    <h1 class="hero-headline">
+      Cybersecurity that<br>
+      <em>protects your people</em>,<br>
+      not just your perimeter.
+    </h1>
+    <p class="hero-sub">1 in 3 small businesses fall victim to a data breach. Exosphere Solutions gives you the tools, training, and monitoring to stop threats before they start.</p>
+    <div class="hero-pills">
+      <span class="pill accent">Cybersecurity</span>
+      <span class="pill accent">HIPAA Compliance</span>
+      <span class="pill">IT Solutions</span>
+      <span class="pill">Dark Web Monitoring</span>
+      <span class="pill">Hosting</span>
+    </div>
+    <div class="hero-btns">
+      <a href="/contact/" class="btn-primary">→ CONTACT US TODAY</a>
+      <a href="#services" class="btn-secondary">SEE SERVICES ↓</a>
+    </div>
+  </section>
 
-<h2 class="wb-stl-custom16"><font color="#ffff2e">Hosting<br>
-Dark Web Domain Scan<br>
-Baseline Phishing Assessment<br>
-Annual Security Training<br>
-Continuous Education</font></h2>
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-num">1 in 3</span>
+      <div class="stat-label">SMBs breached annually</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num">92%</span>
+      <div class="stat-label">Breaches from human error</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num">66%</span>
+      <div class="stat-label">Attacks via phishing email</div>
+    </div>
+  </div>
 
-<h2 class="wb-stl-custom16"><font color="#ffff2e">and Much More</font></h2>
-</div><div id="a196ccc2bc85005e48afd4235997733f" class="wb_element" data-plugin="Button"><a class="wb_button" href="Contacts/"><span><svg xmlns="http://www.w3.org/2000/svg" width="1793.982" height="1793.982" viewBox="0 0 1793.982 1793.982" style="display: inline-block; vertical-align: middle; position: relative; top: -1px; height: 1em; width: 1em; overflow: visible; direction: ltr;"><text x="1.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg>&nbsp;CONTACT US TODAY</span></a></div><div id="a19208976f410032b5932d5f1854288e" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><span style="color:#2ebf91;"><strong>We Also Offer HIPAA Complient Training</strong></span></h3>
-</div><div id="a188dda2010963bed34efeac707388c9" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a1918796c941000bcc3fd58295d4ffe8" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a1918796c94200a1413e61c8176aee6d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a1918796c94201c4309ecde982ec9a92" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187974f5100899c6394a0dbfbb34e" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h4 class="wb-stl-custom8" style="text-align: center;"><span style="color:#ffffff;"><span style="color:#2ebf91;">1 in 3</span> Small to<br>
-Mid-Sized Businesses Fall Victim to a Data Breach</span></h4>
-</div></div></div><div id="a1918796c942029073e49d4bfeb682cb" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187986e92004cf721614dd7498fff" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h5 class="wb-stl-custom11" style="text-align: center;"><span style="color:#ffffff;"><span style="color:#2ebf91;"><strong>WHY?</strong></span> Cybercriminals leverage the path of least resistance. That means businesses that have limited time and resources to put towards cybersecurity become a prime target. Could your business be in their sights?  </span></h5>
-</div></div></div></div></div><div id="a1918796c94203513c194f7252b3f14d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191bb17fb2300790bd6425dbdbf9b5c" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper"><img loading="lazy" alt="" src="gallery_gen/2e4b2caad4824aeeefb8d60a08b0282d_1260x876_fit.jpg?ts=1748918119"></div></div></div><div id="a1918799851c00f8bf657bfbf4d44192" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h4 class="wb-stl-custom8"><span style="color:#ffffff;">WHY IS MY ORGANIZATION AT RISK?</span></h4>
-</div></div></div></div></div><div id="a191879a4c1d009f7eaaf346b745d0ab" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191879a4c1d01fb7a146ade5791d8b3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879a4c1d02006cdf1614e1db4993" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879bbb2b003a8201fe409a20f7ca" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191879bbb2b0157f14aa51dc8d84f5a" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879bbb2b02d52598ff44ea357730" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879d83b60075ae03678d8e5ff52a" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong>Customer Data Makes You Vulnerable</strong></h3>
-</div></div></div><div id="a191879bbb2b03e087af488edfe0a8ab" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879da024002dd5dfbbbc1adbf741" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><strong><span style="color:#2ebf91;">ALL DATA IS VALUABLE TO CYBER CRIMINALS</span></strong></p>
-</div></div></div></div></div><div id="a191879bbb2b04bdde6da70560faffd3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879dc1130010b300658d15136e02" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">Storing and accessing customer data mixed with limited resources to dedicate to cybersecurity means your organization may be at a higher risk of suffering a cyber-attack. </span></p>
-</div></div></div></div></div></div></div><div id="a191879a4c1d03a52b932b158453a0fc" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879beae900617d715d0e0863b3af" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191879beae901f1d502589183d92bf2" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879beae9028fea6a35d1ded6ca41" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187a712c8007fa462feca6908bbef" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong><span style="color:#ffffff;">Dark Web Data Can't Be<br>
-Erased</span></strong></h3>
-</div></div></div><div id="a191879beae903198fc7eceb4070579f" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187ab7b8e00a95dbf955a0610483c" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#2ebf91;"><strong>EXPOSED EMPLOYEE CREDENTIALS </strong></span></p>
-</div></div></div></div></div><div id="a191879beae9043ee0bdf705571101c2" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879ec3f60009da58c8d023041b92" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14"><span style="color:#ffffff;">Company accounts can be involved in data breaches too, such as the LinkedIn or Dropbox breaches. These breached credentials can't be erased and without proactive security and swift remediation, can pose high risks to your network.</span></p>
-</div></div></div></div></div></div></div></div></div><div id="a191879a4c1d05c9a316640c017dd7e3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879a4c1d065d129f1e351d17d3a1" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879bd127002b027f51c0b795e77d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191879bd12701f0b5a4908af79016f5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879bd12702ff1b634b6728ca5861" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187a2827b00d2b20f85a042b0d4d5" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong><span style="color:#ffffff;">92% of Data Breaches due to Human Error</span></strong></h3>
-</div></div></div><div id="a191879bd127039f974f3ff4b1a0632d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879e36d0001fc8ecdb1351d79b29" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><strong><span style="color:#2ebf91;">EMPLOYEES ARE UNAWARE OF RISKS</span></strong></p>
-</div></div></div></div></div><div id="a191879bd12704a4a4fb489397b13ae5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879e526d00794a42d79cc3eaca92" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">66% of cybercriminals rank email phishing as their attack vector of choice. Unsuspecting employees may be fooled by an illegitimate email without thinking twice.</span></p>
-</div></div></div></div></div></div></div><div id="a191879a4c1d07e240465fad30789bb2" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879c002b001e952df936fd7b0906" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191879c002b01df616750ad05c8f19a" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879c002b028476a3d9546cc6bb82" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187a73f1800b22f948d648920ae55" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong><span style="color:#ffffff;">Password<br>
-Reuse is an Epidemic</span></strong></h3>
-</div></div></div><div id="a191879c002b03acd4a4d7203785403c" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187abaf5b00baedfd5582cd22ec41" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#2ebf91;"><strong>"IT'S EASIER TO USE ONE PASSWORD"</strong></span></p>
-</div></div></div></div></div><div id="a191879c002b043f2fc69a6c43bc2a90" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191879f1feb00069aa613d3aba0059b" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">59% of individuals admitted to mostly or always using the same password, despite 91% knowing it's a security risk.* If a breached password is reused, the subsequent accounts are also at risk of being hacked.</span></p>
-</div><div id="a19187aefa2a00e7aa81f660bc84e51a" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom7" style="text-align: center;"><span style="color:#ffffff;">*LastPass by LogMeIn - Psychology of Passwords Report</span></p>
-</div></div></div></div></div></div></div></div></div></div></div></div></div><div id="a19187b4c4e700a90a36219a343915cd" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187b4c4e70112579933fd99ece0b5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191bb1edc6f0004f5cfaed226c5aa30" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper"><img loading="lazy" alt="" src="gallery_gen/3ede5304d6088349d51994f197209273_1252x834_fit.jpg?ts=1748918119"></div></div></div><div id="a19187b689f5005dd3e21cddd52e5156" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h4 class="wb-stl-custom8"><span style="color:#ffffff;">WHY HUMANS?</span></h4>
-</div></div></div><div id="a19187b4c4e702276f75323423d35406" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187b6ac760090d9d8954fc65ce93a" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h5 class="wb-stl-custom11"><span style="color:#ffffff;">48% of hackers and incident respondents spend 1-5 hours per week keeping up with security news, trends, and technologies. Technology is a reactive way of thinking, so how can we compete? We need to take a proactive approach to cyber security to stop cybercriminals in their tracks by strengthening employees - your first layer of defense. </span></h5>
-</div></div></div><div id="a19187bac88d004ef6ef0b6942a118ec" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a191d10f371b008cbc06f2ed749759f9" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191bb1f5a400074cebee2dadb1dd1cc" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper"><img loading="lazy" alt="" src="gallery_gen/9a542410e7d74dda7cabaa87d8c55504_1198x898_fit.jpg?ts=1748918120"></div></div></div></div></div><div id="a19187baaf9a008667da066d490291de" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h4 class="wb-stl-custom8"><span style="color:#ffffff;">HOW CAN WE HELP YOU PROTECT YOURSELF?</span></h4>
-</div><div id="a19187bc2835007de2e8d7aa8267d0c3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc284e0099f792b811f6b42ba5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2864009063ce95a1876e5dd4" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a19187bc287b009733b306fcb1d59bf6" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc289200c7f080d497b39781c9" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc28aa00e5a108265e0e3a9a5d" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong>Dark Web Domain Scan</strong></h3>
-</div></div></div><div id="a19187bc28c200d1179362036c4433b2" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc28cc0016e388ac44efefdb6a" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#2ebf91;"><strong>What can we do?</strong></span></p>
-</div><div id="a19187bd233500aa7bb6ed60d4d92dce" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#ffffff;">Initial scan of your domain status on the dark web - Evaluates vulnerabilities presently facing your organization</span></p>
-</div></div></div></div></div><div id="a19187bc28eb0057d5ecaa5d9a54dae1" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc28f500f555fa4a30da5b3304" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">With password reuse and social engineering attacks running rampant, having credentials associated with your organization on the dark web can put your organization at increased risk of becoming a target. </span></p>
-</div></div></div></div></div></div></div><div id="a19187bc290e009163b73c2f2a0c0c29" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc291800a91d046bcff6d15b7d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a19187bc29250018a411443bc31721aa" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc29330080f5a85b54214c2388" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc294000fb59c5d391e99afcb1" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong><span style="color:#ffffff;">Annual Security Training</span></strong></h3>
-</div></div></div><div id="a19187bc295c00231f416212beb729a3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc296f0082d9d8731fc858c085" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#2ebf91;"><strong>What can we do?</strong></span></p>
-</div><div id="a19187ccb976003937f5225032481729" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#ffffff;">45-minute annual Security Awareness Training course – Reduce employee-induced errors with cybersecurity training. Includes a quiz and printable certificate upon the employee’s successful completion.</span></p>
-</div></div></div></div></div><div id="a19187bc29890038c15ac07379ba78bc" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc299400fb7368a269425fdcae" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">92% of data breaches are caused by human error. Cisco says, "Companies shouldn't just throw technology at the problem. Up-skilling users and making them more cyber-aware is vital." </span></p>
-</div></div></div></div></div></div></div></div></div><div id="a19187bc29d400e7861ed0048828ccf6" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc29e000d66b60f9e78a34f5ab" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc29ea00f48a91194a9cec44db" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a19187bc29f400b9942b47b73bdc922f" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc29fe00b97ac73213a389b1c3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a0800b69a1d2779cc18a8b4" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong>Baseline Phishing Assessment</strong></h3>
-</div></div></div><div id="a19187bc2a1a00750a4ea4feedfa88cb" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a2500bddecb12d762c94cd4" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14"><span style="color:#2ebf91;"><strong>What can we do?</strong></span></p>
-</div><div id="a19187c9a34f00e14e6e92f7c5ccaf54" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#ffffff;">Phishing campaign sent direct to your employees - Evaluates their ability to detect a possible cyber attack</span></p>
-</div></div></div></div></div><div id="a19187bc2a3a0041525124af314371c7" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a48002a134fbad8da82e9d1" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">Phishing has become the #1 attack method of choice for cybercriminals due to its high success rate. According to the Ponemon Institute, organizations see a 64% improvement in phishing click rates with a security training program.</span></p>
-</div></div></div></div></div></div></div><div id="a19187bc2a6200ce71cfa3ad32d6eea1" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a6c00ffdab388708a55307a" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a19187bc2a7700504da708604ea87c03" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a87002dc2c11b23114ed73e" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2a980055e8eea8fc41f6e19a" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong><span style="color:#ffffff;">Continuous Education Available</span></strong></h3>
-</div></div></div><div id="a19187bc2ab50024b30bf5cab9abbcb9" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2ac5008e1fac1dd278fd8efb" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14"><span style="color:#2ebf91;"><strong>What can we do?</strong></span></p>
-</div><div id="a19187cde6d600fff0113ce6bf19db07" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:#ffffff;">We offer an ongoing education solution – Weekly mini-security training video, monthly security newsletter, continuous phishing and dark web monitoring, an Employee Vulnerability Assessment, &amp; more!</span></p>
-</div></div></div></div></div><div id="a19187bc2ade00b43a0ee3dca4436adb" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187bc2ae900bba53457182e725fdb" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">Annual security training is a great way to cover the basics of cybersecurity, but repetition equals retention. Ongoing education is key in a robust cybersecurity program. </span></p>
-</div></div></div></div></div></div></div></div></div></div></div></div></div><div id="a19187d740170069edf1397268081ef2" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187d74017016f542bc3686f337c6f" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a191bb1f9a400053bd9058d4119e3bcf" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap"><div class="wb-picture-wrapper"><img loading="lazy" alt="" src="gallery_gen/1e37c4a28bcc43ab830503eb54e3ec95_1482x818_fit.jpg?ts=1748918121"></div></div></div><div id="a19187d871f6007533a1fbe863f03843" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h4 class="wb-stl-custom8" style="text-align: center;"><span style="color:#ffffff;">ASSESS YOUR HUMAN VULNERABILITIES</span></h4>
-</div></div></div><div id="a19187d7401800b2ca775b416853b2cf" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a19187dabdd8004852360c3c83b2bb51" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom14" style="text-align: center;"><span style="color:#ffffff;">Cybercriminals leverage the path of least resistance, humans, to make their way into a network. We can help you assess where your human vulnerabilities lie. Contact us today to learn how we can help you start establishing cybersecurity throughout your organization. </span></p>
-</div></div></div><div id="a19187d74018010c18f06aaba34fa9c9" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a1919b831b5000c99ce289fb388471c1" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><span style="color:#2ebf91;"><strong>We Also Offer HIPAA Complient Training</strong></span></h3>
-</div><div id="a19208969bd500caaf76b7e9895aa452" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-custom16"><span style="color:#ffff2e;">Current Promotion: </span></h2>
+  <!-- THREAT SECTION -->
+  <section class="section">
+    <div class="section-label">// THREAT LANDSCAPE</div>
+    <h2 class="section-title">Why your organization is at risk</h2>
+    <p class="section-sub">Cybercriminals follow the path of least resistance. Limited IT resources make small and mid-sized businesses prime targets.</p>
+    <div class="risk-grid">
+      <div class="risk-card">
+        <span class="risk-num">$200K</span>
+        <h4>Average breach cost for SMBs</h4>
+        <p>All customer data is valuable to attackers, regardless of business size.</p>
+      </div>
+      <div class="risk-card">
+        <span class="risk-num">59%</span>
+        <h4>Employees reuse passwords</h4>
+        <p>Despite 91% knowing it's a serious security risk.</p>
+      </div>
+      <div class="risk-card">
+        <span class="risk-num">∞</span>
+        <h4>Dark web data can't be erased</h4>
+        <p>Once credentials are exposed, swift remediation is critical.</p>
+      </div>
+      <div class="risk-card">
+        <span class="risk-num">48h</span>
+        <h4>Hackers stay current weekly</h4>
+        <p>Proactive defense is the only way to keep pace with evolving threats.</p>
+      </div>
+    </div>
+  </section>
 
-<h2 class="wb-stl-custom16"><span style="color:#ffff2e;">Massive Discounts for new Customers to Help Us Test our New Training Program!</span></h2>
-</div><div id="a19187db288400a6e1b0556bfde7486d" class="wb_element" data-plugin="Button"><a class="wb_button" href="Contacts/"><span><svg xmlns="http://www.w3.org/2000/svg" width="1793.982" height="1793.982" viewBox="0 0 1793.982 1793.982" style="display: inline-block; vertical-align: middle; position: relative; top: -1px; height: 1em; width: 1em; overflow: visible; direction: ltr;"><text x="1.501415" y="1537.02" font-size="1792" fill="currentColor" style='font-family: "FontAwesome"'></text></svg>&nbsp;CONTACT US TODAY</span></a></div></div></div></div></div></div></div><div id="wb_footer_a188dda230d100e01ac7374ab1c64b94" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a196ccc4b03500d361600fdc3832d42f" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-custom20" style="text-align: center;"><span style="font-size: 8px; line-height: 12.21px;">500 Henrietta St</span></p>
+  <!-- HIPAA BANNER -->
+  <div class="hipaa-banner">
+    <div class="hipaa-icon">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <rect x="3" y="3" width="20" height="20" rx="4" stroke="#f5e642" stroke-width="1.5"/>
+        <path d="M13 8v10M8 13h10" stroke="#f5e642" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="hipaa-text">
+      <h3>HIPAA Compliant Training Available</h3>
+      <p>Specialized HIPAA security awareness training tailored for healthcare organizations and their staff. Stay compliant and protect patient data.</p>
+    </div>
+  </div>
 
-<p class="wb-stl-custom20" style="text-align: center;"><span style="font-size:8px;">Maritnez. CA 94553</span></p>
-</div><div id="a188dda2010a19ad9e992146380b7007" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18ec4012c9a006bc447f9fa34edb950" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dda2010a1de0929bab8628903d54" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-footer" style="text-align: center;"><b>Copyright Exosphere Solutions<br>
-<br>
-Share us with your friends:</b></p>
-</div><div id="a18ec400c0ee00ed344dcf2277cde7c3" class="wb_element wb-prevent-layout-click" data-plugin="BookmarksShare"><script type="text/javascript">$(function () { 
-			 $(".wb_share_button").map(function (key, item) {
-			  var $item = $(item);
-			  if ($item.hasClass("share_button_facebook")) $item.attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_twitter")) $item.attr("href", "https://twitter.com/intent/tweet?url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_pinterest")) $item.attr("href", "https://www.pinterest.com/pin/create/button/?&url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_linkedin")) $item.attr("href", "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_reddit")) $item.attr("href", "https://www.reddit.com/submit?url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_tumblr")) $item.attr("href", "https://www.tumblr.com/widgets/share/tool?posttype=link&canonicalUrl=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_whatsapp")) $item.attr("href", "https://api.whatsapp.com/send?text=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_telegram")) $item.attr("href", "https://t.me/share/url?url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_email")) $item.attr("href", "mailto:?body=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_vk")) $item.attr("href", "https://vk.com/share.php?url=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_odnoklassniki_ru")) $item.attr("href", "https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=" + encodeURIComponent(window.location.toString()));
-			  if ($item.hasClass("share_button_print")) $item.attr("href", "javascript:window.print()");
-			 });
-			})</script><div class="wb_share_button_wrap colored"><a target="_blank" id="a18ec400c0ee00ed344dcf2277cde7c3_facebook" class="wb_share_button share_button_facebook size_32x32" style=""><span class="fa fa-facebook"></span></a><a target="_blank" id="a18ec400c0ee00ed344dcf2277cde7c3_twitter" class="wb_share_button share_button_twitter size_32x32" style=" margin-left: 4px;"><span class="ico-pl-twitter-x"></span></a><a target="_blank" id="a18ec400c0ee00ed344dcf2277cde7c3_email" class="wb_share_button share_button_email size_32x32" style=" margin-left: 4px;"><span class="fa fa-envelope"></span></a><a target="_blank" id="a18ec400c0ee00ed344dcf2277cde7c3_linkedin" class="wb_share_button share_button_linkedin size_32x32" style=" margin-left: 4px;"><span class="fa fa-linkedin"></span></a></div></div></div></div></div></div><div id="wb_footer_c" class="wb_element" data-plugin="WB_Footer" style="text-align: center; width: 100%;"><div class="wb_footer"></div><script type="text/javascript">
-			$(function() {
-				var footer = $(".wb_footer");
-				var html = (footer.html() + "").replace(/^\s+|\s+$/g, "");
-				if (!html) {
-					footer.parent().remove();
-					footer = $("#footer, #footer .wb_cont_inner");
-					footer.css({height: ""});
-				}
-			});
-			</script></div></div></div></div></body>
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-label">// OUR SOLUTIONS</div>
+    <h2 class="section-title">How we protect your business</h2>
+    <p class="section-sub">A layered approach to cybersecurity — from initial assessment through to ongoing education and continuous monitoring.</p>
+    <div class="services-list">
+      <div class="service-row">
+        <div class="service-icon">
+          <svg viewBox="0 0 20 20">
+            <circle cx="10" cy="10" r="7"/>
+            <path d="M10 4v6l4.5 2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Dark Web Domain Scan</h4>
+          <p>Initial scan to evaluate if your organization's credentials are currently exposed on the dark web.</p>
+        </div>
+        <span class="service-tag">FREE SCAN</span>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">
+          <svg viewBox="0 0 20 20">
+            <path d="M4 10l4.5 4.5 8-8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Baseline Phishing Assessment</h4>
+          <p>A simulated phishing campaign sent directly to your employees to evaluate their ability to detect a cyber attack.</p>
+        </div>
+        <span class="service-tag">ASSESS</span>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">
+          <svg viewBox="0 0 20 20">
+            <rect x="3" y="3" width="14" height="14" rx="3"/>
+            <path d="M10 7v6M7 10h6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Annual Security Training</h4>
+          <p>45-minute security awareness course with quiz and printable certificate upon successful completion.</p>
+        </div>
+        <span class="service-tag">TRAIN</span>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">
+          <svg viewBox="0 0 20 20">
+            <path d="M10 2l2.5 6h6L14 12l2 6-6-3.5L4 18l2-6-4.5-4h6z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Continuous Education Program</h4>
+          <p>Weekly mini-training videos, monthly security newsletter, continuous phishing &amp; dark web monitoring, and an Employee Vulnerability Assessment.</p>
+        </div>
+        <span class="service-tag">ONGOING</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/exosolutionsus" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/exosphere-solutions/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@ExosphereSolutions" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#09080f"/></svg>
+      </a>
+      <a href="https://www.yelp.com/biz/exosphere-solutions-martinez" target="_blank" rel="noopener" class="footer-social" aria-label="Yelp">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </a>
+    </div>
+    <p>© Exosphere Solutions. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>
-

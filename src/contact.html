@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Exosphere Solutions — Cybersecurity and IT support for the San Francisco Bay Area." />
+  <title>Contact Us | Exosphere Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #09080f;
+      --surface: #100e1a;
+      --surface2: #17142a;
+      --accent: #a78bfa;
+      --accentbg: rgba(167,139,250,0.1);
+      --accentborder: rgba(167,139,250,0.25);
+      --text: #e8e4f8;
+      --muted: #7a7299;
+      --border: #1e1a33;
+      --yellow: #f5e642;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    .nav { background: rgba(9,8,15,0.97); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+    .nav-logo { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-mark { width: 32px; height: 32px; border-radius: 7px; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-logo-mark svg { width: 18px; height: 18px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: #09080f; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 10px 18px; border-radius: 6px; letter-spacing: 0.06em; transition: opacity 0.2s, transform 0.15s; }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; gap: 4px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 14px; font-weight: 500; color: var(--muted); padding: 10px 0; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile a.active { color: var(--accent); }
+    .nav-mobile .nav-mobile-cta { margin-top: 12px; background: var(--accent); color: #09080f; font-family: var(--mono); font-size: 12px; font-weight: 700; padding: 12px 20px; border-radius: 6px; text-align: center; letter-spacing: 0.06em; }
+
+    /* ── PAGE HEADER ── */
+    .page-header { padding: 64px 40px 48px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%); pointer-events: none; }
+    .page-header-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
+    .page-header h1 { font-family: var(--mono); font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .page-header p { font-size: 15px; color: var(--muted); margin-top: 12px; max-width: 520px; line-height: 1.7; }
+
+    /* ── PRIVACY NOTE ── */
+    .privacy-note { margin: 32px 40px 0; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; max-width: 620px; }
+    .privacy-note svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px; }
+    .privacy-note p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── CONTACT GRID ── */
+    .content { padding: 40px 40px 64px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; }
+
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 20px; transition: border-color 0.2s; }
+    .contact-card:hover { border-color: var(--accentborder); }
+
+    .contact-card-header { display: flex; align-items: center; gap: 12px; }
+    .contact-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--accentbg); border: 1px solid var(--accentborder); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .contact-card-label { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; }
+
+    .contact-person { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; border-top: 1px solid var(--border); }
+    .contact-person + .contact-person { padding-top: 16px; border-top: 1px solid var(--border); margin-top: 4px; }
+    .contact-name { font-size: 14px; font-weight: 600; color: var(--text); }
+    .contact-role { font-size: 12px; font-family: var(--mono); color: var(--muted); letter-spacing: 0.04em; margin-bottom: 4px; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; }
+    .contact-detail svg { width: 13px; height: 13px; stroke: var(--muted); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+    .contact-detail a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+    .contact-detail a:hover { color: var(--accent); }
+
+    .email-list { display: flex; flex-direction: column; gap: 4px; }
+    .email-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px; background: var(--surface2); border: 1px solid transparent; transition: border-color 0.2s; }
+    .email-row:hover { border-color: var(--accentborder); }
+    .email-row svg { width: 13px; height: 13px; stroke: var(--accent); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+    .email-row a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+    .email-row:hover a { color: var(--accent); }
+    .email-label { font-size: 10px; font-family: var(--mono); color: var(--border); background: var(--accentbg); border: 1px solid var(--accentborder); border-radius: 3px; padding: 2px 6px; color: var(--accent); margin-left: auto; letter-spacing: 0.04em; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 40px; text-align: center; }
+    .footer-socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+    .footer-social { width: 36px; height: 36px; border-radius: 7px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+    .footer-social:hover { border-color: var(--accentborder); }
+    .footer-social svg { width: 15px; height: 15px; fill: var(--muted); }
+    .footer p { font-size: 12px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-header { padding: 48px 20px 36px; }
+      .page-header h1 { font-size: 26px; }
+      .privacy-note { margin: 24px 20px 0; }
+      .content { padding: 32px 20px 48px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer { padding: 32px 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .page-header > * { animation: fadeUp 0.4s ease both; }
+    .page-header > *:nth-child(1) { animation-delay: 0.05s; }
+    .page-header > *:nth-child(2) { animation-delay: 0.12s; }
+    .page-header > *:nth-child(3) { animation-delay: 0.19s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#09080f" stroke-width="1.5"/><path d="M9 4v5l3.5 2" stroke="#09080f" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        EXOSPHERE
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
+        <li><a href="/resources/">Resources</a></li>
+      </ul>
+      <a href="/contact/" class="nav-cta">GET PROTECTED →</a>
+      <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile">
+      <a href="/">Home</a>
+      <a href="/contact/" class="active">Contact</a>
+      <a href="/resources/">Resources</a>
+      <a href="/contact/" class="nav-mobile-cta">GET PROTECTED →</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-label">// CONTACT US</div>
+    <h1>Get in Touch</h1>
+    <p>Ready to protect your business? Reach out and we'll get back to you promptly.</p>
+  </div>
+
+  <!-- PRIVACY NOTE -->
+  <div class="privacy-note">
+    <svg viewBox="0 0 16 16"><path d="M8 1l6 3v5c0 3-3 5-6 6C5 14 2 12 2 9V4l6-3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>We will never sell your email address or personal information, and will only use your contact details to reply to your message.</p>
+  </div>
+
+  <!-- CONTACT CONTENT -->
+  <main class="content">
+    <div class="contact-grid">
+
+      <!-- OWNERS -->
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="7" r="3"/><path d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="contact-card-label">DIRECT CONTACT</div>
+        </div>
+
+        <div class="contact-person">
+          <div class="contact-name">Anna Cleese</div>
+          <div class="contact-role">OWNER</div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 16 16"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4z"/><path d="M2 6l6 4 6-4" stroke-linecap="round"/></svg>
+            <a href="mailto:Anna.Cleese@ExoSolutions.us">Anna.Cleese@ExoSolutions.us</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 16 16"><path d="M3 3.5A1.5 1.5 0 014.5 2h.879a1.5 1.5 0 011.342.83l.828 1.657a1.5 1.5 0 01-.337 1.767l-.499.499a7.002 7.002 0 003.534 3.534l.499-.499a1.5 1.5 0 011.767-.337l1.657.828A1.5 1.5 0 0114 11.121V12a1.5 1.5 0 01-1.5 1.5H12C6.477 13.5 2.5 9.523 2.5 4v-.5z" stroke-linecap="round"/></svg>
+            <a href="tel:9252572928">925 257 2928</a>
+          </div>
+        </div>
+
+        <div class="contact-person">
+          <div class="contact-name">Robert Gonzales</div>
+          <div class="contact-role">OWNER</div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 16 16"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4z"/><path d="M2 6l6 4 6-4" stroke-linecap="round"/></svg>
+            <a href="mailto:Robert.Gonzales@ExoSolutions.us">Robert.Gonzales@ExoSolutions.us</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 16 16"><path d="M3 3.5A1.5 1.5 0 014.5 2h.879a1.5 1.5 0 011.342.83l.828 1.657a1.5 1.5 0 01-.337 1.767l-.499.499a7.002 7.002 0 003.534 3.534l.499-.499a1.5 1.5 0 011.767-.337l1.657.828A1.5 1.5 0 0114 11.121V12a1.5 1.5 0 01-1.5 1.5H12C6.477 13.5 2.5 9.523 2.5 4v-.5z" stroke-linecap="round"/></svg>
+            <a href="tel:9252699806">925 269 9806</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPARTMENT EMAILS -->
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 7l8 5 8-5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="contact-card-label">DEPARTMENT EMAILS</div>
+        </div>
+
+        <div class="email-list">
+          <div class="email-row">
+            <svg viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6l7 4 7-4" stroke-linecap="round"/></svg>
+            <a href="mailto:Billing@ExoSolutions.us">Billing@ExoSolutions.us</a>
+            <span class="email-label">BILLING</span>
+          </div>
+          <div class="email-row">
+            <svg viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6l7 4 7-4" stroke-linecap="round"/></svg>
+            <a href="mailto:Sales@ExoSolutions.us">Sales@ExoSolutions.us</a>
+            <span class="email-label">SALES</span>
+          </div>
+          <div class="email-row">
+            <svg viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 6l7 4 7-4" stroke-linecap="round"/></svg>
+            <a href="mailto:Support@ExoSolutions.us">Support@ExoSolutions.us</a>
+            <span class="email-label">SUPPORT</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/exosolutionsus" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/exosphere-solutions/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@ExosphereSolutions" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#09080f"/></svg>
+      </a>
+      <a href="https://www.yelp.com/biz/exosphere-solutions-martinez" target="_blank" rel="noopener" class="footer-social" aria-label="Yelp">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </a>
+    </div>
+    <p>© Exosphere Solutions. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
