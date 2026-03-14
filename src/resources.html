@@ -3,296 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Exosphere Solutions — Resources, links, and tools for cybersecurity and IT in the San Francisco Bay Area." />
+  <meta name="description" content="Exosphere Solutions Resources — Useful links for clients, internal team members, and consumers including credit freeze tools, training portals, and more." />
   <title>Resources | Exosphere Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #09080f;
-      --surface: #100e1a;
-      --surface2: #17142a;
-      --accent: #a78bfa;
-      --accentbg: rgba(167,139,250,0.1);
-      --accentborder: rgba(167,139,250,0.25);
-      --text: #e8e4f8;
-      --muted: #7a7299;
-      --border: #1e1a33;
-      --yellow: #f5e642;
-      --mono: 'Space Mono', monospace;
-      --sans: 'DM Sans', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── NAV ── */
-    .nav { background: rgba(9,8,15,0.97); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
-    .nav-logo { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; display: flex; align-items: center; gap: 10px; }
-    .nav-logo-mark { width: 32px; height: 32px; border-radius: 7px; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .nav-logo-mark svg { width: 18px; height: 18px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--accent); }
-    .nav-cta { background: var(--accent); color: #09080f; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 10px 18px; border-radius: 6px; letter-spacing: 0.06em; transition: opacity 0.2s, transform 0.15s; }
-    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
-    .nav-mobile { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; gap: 4px; }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a { font-size: 14px; font-weight: 500; color: var(--muted); padding: 10px 0; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; }
-    .nav-mobile a:last-child { border-bottom: none; }
-    .nav-mobile a.active { color: var(--accent); }
-    .nav-mobile .nav-mobile-cta { margin-top: 12px; background: var(--accent); color: #09080f; font-family: var(--mono); font-size: 12px; font-weight: 700; padding: 12px 20px; border-radius: 6px; text-align: center; letter-spacing: 0.06em; }
-
-    /* ── PAGE HEADER ── */
-    .page-header { padding: 64px 40px 48px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
-    .page-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%); pointer-events: none; }
-    .page-header-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
-    .page-header h1 { font-family: var(--mono); font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.2; }
-    .page-header p { font-size: 16px; color: var(--muted); margin-top: 12px; max-width: 520px; line-height: 1.7; }
-
-    /* ── MAIN CONTENT ── */
-    .content { padding: 48px 40px; max-width: 1100px; }
-
-    .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-    .resource-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 16px; transition: border-color 0.2s; }
-    .resource-card:hover { border-color: var(--accentborder); }
-
-    .resource-card-header { display: flex; align-items: center; gap: 12px; }
-    .resource-card-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--accentbg); border: 1px solid var(--accentborder); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .resource-card-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
-    .resource-card-title { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; }
-
-    .resource-links { display: flex; flex-direction: column; gap: 2px; }
-    .resource-link { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px; background: var(--surface2); border: 1px solid transparent; transition: border-color 0.2s, background 0.2s; }
-    .resource-link:hover { border-color: var(--accentborder); background: rgba(167,139,250,0.05); }
-    .resource-link-arrow { font-size: 11px; color: var(--accentborder); flex-shrink: 0; font-family: var(--mono); }
-    .resource-link span { font-size: 13px; color: var(--text); line-height: 1.4; }
-    .resource-link:hover span { color: var(--accent); }
-
-    /* ── FOOTER ── */
-    .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 40px; text-align: center; margin-top: 40px; }
-    .footer-socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
-    .footer-social { width: 36px; height: 36px; border-radius: 7px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
-    .footer-social:hover { border-color: var(--accentborder); }
-    .footer-social svg { width: 15px; height: 15px; fill: var(--muted); }
-    .footer p { font-size: 12px; color: var(--muted); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .resources-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav { padding: 0 20px; }
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-      .page-header { padding: 48px 20px 36px; }
-      .page-header h1 { font-size: 26px; }
-      .content { padding: 32px 20px; }
-      .resources-grid { grid-template-columns: 1fr; }
-      .footer { padding: 32px 20px; }
-    }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    .page-header > * { animation: fadeUp 0.4s ease both; }
-    .page-header > *:nth-child(1) { animation-delay: 0.05s; }
-    .page-header > *:nth-child(2) { animation-delay: 0.12s; }
-    .page-header > *:nth-child(3) { animation-delay: 0.19s; }
+    :root { --bg:#09080f; --surface:#100e1a; --surface2:#17142a; --accent:#a78bfa; --accentbg:rgba(167,139,250,0.12); --accentborder:rgba(167,139,250,0.3); --text:#e8e4f8; --muted:#9b93b8; --border:#1e1a33; --yellow:#f5e642; --mono:'Space Mono',monospace; --sans:'DM Sans',sans-serif; --max-w:1100px; --pad:40px; }
+    .skip-link { position:absolute; top:-100px; left:16px; background:var(--accent); color:#09080f; font-family:var(--mono); font-size:13px; font-weight:700; padding:10px 18px; border-radius:6px; z-index:9999; transition:top 0.2s; text-decoration:none; }
+    .skip-link:focus { top:16px; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+    a { color:inherit; text-decoration:none; }
+    .nav { background:rgba(9,8,15,0.97); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+    .nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad); display:flex; align-items:center; justify-content:space-between; height:64px; }
+    .nav-logo { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent); letter-spacing:0.08em; display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo-mark { width:32px; height:32px; border-radius:7px; background:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .nav-logo-mark svg { width:18px; height:18px; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { font-size:13px; font-weight:500; color:var(--muted); letter-spacing:0.04em; transition:color 0.2s; padding:4px 0; text-decoration:none; }
+    .nav-links a:hover { color:var(--text); }
+    .nav-links a[aria-current="page"] { color:var(--accent); text-decoration:underline; text-underline-offset:4px; }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      background:var(--accent); color:#09080f; font-family:var(--mono); font-size: 13px; font-weight:700; padding:10px 18px; border-radius:6px; letter-spacing:0.06em; transition:opacity 0.2s,transform 0.15s; text-decoration:none; }
+    .nav-cta:hover { opacity:0.88; transform:translateY(-1px); }
+    .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:1px solid var(--border); border-radius:6px; }
+    .nav-hamburger span { display:block; width:20px; height:2px; background:var(--text); border-radius:2px; }
+    .nav-mobile { display:none; flex-direction:column; background:var(--surface); border-bottom:1px solid var(--border); padding:16px 24px; gap:4px; }
+    .nav-mobile.open { display:flex; }
+    .nav-mobile a { font-size:15px; font-weight:500; color:var(--muted); padding:12px 0; border-bottom:1px solid var(--border); letter-spacing:0.03em; text-decoration:none; }
+    .nav-mobile a:last-of-type { border-bottom:none; }
+    .nav-mobile a[aria-current="page"] { color:var(--accent); }
+    .nav-mobile-cta { margin-top:12px; background:var(--accent); color:#09080f; font-family:var(--mono); font-size:12px; font-weight:700; padding:13px 20px; border-radius:6px; text-align:center; letter-spacing:0.06em; display:block; text-decoration:none; }
+    .page-header { padding:64px 0 52px; border-bottom:1px solid var(--border); text-align:center; position:relative; overflow:hidden; }
+    .page-header::before { content:''; position:absolute; top:-80px; right:10%; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle,rgba(167,139,250,0.07) 0%,transparent 70%); pointer-events:none; }
+    .page-header-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad); }
+    .page-header-label { font-family:var(--mono); font-size:11px; letter-spacing:0.14em; color:var(--accent); margin-bottom:14px; display:block; }
+    .page-header h1 { font-family:var(--mono); font-size:36px; font-weight:700; color:var(--text); line-height:1.2; margin-bottom:12px; }
+    .page-header p { font-size:16px; color:var(--muted); max-width:520px; line-height:1.7; margin:0 auto; }
+    .content { padding:56px 0 72px; }
+    .content-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad); }
+    .resources-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+    .resource-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; display:flex; flex-direction:column; gap:16px; transition:border-color 0.2s; }
+    .resource-card:hover,.resource-card:focus-within { border-color:var(--accentborder); }
+    .resource-card-header { display:flex; align-items:center; gap:12px; }
+    .resource-card-icon { width:40px; height:40px; border-radius:8px; background:var(--accentbg); border:1px solid var(--accentborder); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .resource-card-icon svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:1.5; }
+    .resource-card-title { font-family:var(--mono); font-size:11px; font-weight:700; color:var(--accent); letter-spacing:0.08em; }
+    .resource-links { display:flex; flex-direction:column; gap:3px; list-style:none; }
+    .resource-link { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:6px; background:var(--surface2); border:1px solid transparent; transition:border-color 0.2s,background 0.2s; text-decoration:none; }
+    .resource-link:hover,.resource-link:focus { border-color:var(--accentborder); background:rgba(167,139,250,0.05); }
+    .resource-link-arrow { font-size:12px; color:var(--accentborder); flex-shrink:0; font-family:var(--mono); }
+    .resource-link span { font-size:13px; color:var(--text); line-height:1.4; }
+    .resource-link:hover span,.resource-link:focus span { color:var(--accent); }
+    .col-stack { display:flex; flex-direction:column; gap:20px; }
+    footer { background:var(--surface); border-top:1px solid var(--border); padding:48px var(--pad); text-align:center; }
+    .footer-inner { max-width:var(--max-w); margin:0 auto; }
+    .footer-socials { display:flex; justify-content:center; gap:12px; margin-bottom:20px; }
+    .footer-social { width:40px; height:40px; border-radius:8px; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; transition:border-color 0.2s; text-decoration:none; }
+    .footer-social:hover { border-color:var(--accentborder); }
+    .footer-social svg { width:16px; height:16px; fill:var(--muted); }
+    footer p { font-size:13px; color:var(--muted); }
+    @media (max-width:900px) { .resources-grid { grid-template-columns:1fr 1fr; } }
+    @media (max-width:768px) { :root{--pad:20px;} .nav-links,.nav-cta{display:none;} .nav-hamburger{display:flex;} .page-header{padding:48px 0 36px;} .page-header h1{font-size:26px;} .resources-grid{grid-template-columns:1fr;} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);} }
+    .page-header-inner>*{animation:fadeUp 0.4s ease both;}
+    .page-header-inner>*:nth-child(1){animation-delay:0.05s;}
+    .page-header-inner>*:nth-child(2){animation-delay:0.12s;}
+    .page-header-inner>*:nth-child(3){animation-delay:0.19s;}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <header>
-    <nav class="nav">
-      <a href="/" class="nav-logo">
-        <div class="nav-logo-mark">
-          <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#09080f" stroke-width="1.5"/><path d="M9 4v5l3.5 2" stroke="#09080f" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        EXOSPHERE
-      </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/resources/" class="active">Resources</a></li>
-      </ul>
-      <a href="/contact/" class="nav-cta">GET PROTECTED →</a>
-      <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="Exosphere Solutions — Home">
+          <div class="nav-logo-mark" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="#09080f" stroke-width="1.5"/><path d="M9 4v5l3.5 2" stroke="#09080f" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          EXOSPHERE
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/resources/" aria-current="page">Resources</a></li>
+        </ul>
+        <a href="/contact/" class="nav-cta">GET PROTECTED →</a>
+        <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMenu(this)">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
     </nav>
-    <nav class="nav-mobile">
-      <a href="/">Home</a>
-      <a href="/contact/">Contact</a>
-      <a href="/resources/" class="active">Resources</a>
+    <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="/">Home</a><a href="/contact/">Contact</a><a href="/resources/" aria-current="page">Resources</a>
       <a href="/contact/" class="nav-mobile-cta">GET PROTECTED →</a>
     </nav>
   </header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="page-header-label">// RESOURCES</div>
-    <h1>Links &amp; Tools</h1>
-    <p>Useful links for clients, internal team members, and consumers — all in one place.</p>
-  </div>
-
-  <!-- CONTENT -->
-  <main class="content">
-    <div class="resources-grid">
-
-      <!-- INTERNAL LINKS -->
-      <div class="resource-card">
-        <div class="resource-card-header">
-          <div class="resource-card-icon">
-            <svg viewBox="0 0 18 18"><rect x="2" y="2" width="14" height="14" rx="3"/><path d="M6 9h6M9 6v6" stroke-linecap="round"/></svg>
-          </div>
-          <div class="resource-card-title">INTERNAL LINKS</div>
-        </div>
-        <div class="resource-links">
-          <a href="https://help.exosolutions.us/support/home" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Internal Ticket System</span>
-          </a>
-          <a href="https://exosphere.freshdesk.com/support/home" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Internal Ticket System (Alt URL)</span>
-          </a>
-          <a href="https://portal.pii-protect.com/#/login?brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Training Portal Login</span>
-          </a>
-        </div>
+  <main id="main-content" tabindex="-1">
+    <div class="page-header">
+      <div class="page-header-inner">
+        <span class="page-header-label" aria-hidden="true">// RESOURCES</span>
+        <h1>Links &amp; Tools</h1>
+        <p>Useful links for clients, internal team members, and consumers — all in one place.</p>
       </div>
-
-      <!-- CONSUMER LINKS -->
-      <div class="resource-card">
-        <div class="resource-card-header">
-          <div class="resource-card-icon">
-            <svg viewBox="0 0 18 18"><circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-linecap="round"/></svg>
-          </div>
-          <div class="resource-card-title">CONSUMER LINKS</div>
-        </div>
-        <div class="resource-links">
-          <a href="https://www.equifax.com/personal/credit-report-services/credit-freeze/" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Equifax Credit Freeze</span>
-          </a>
-          <a href="https://www.experian.com/freeze/center.html" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Experian Credit Freeze</span>
-          </a>
-          <a href="https://www.transunion.com/credit-freeze" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>TransUnion Credit Freeze</span>
-          </a>
-          <a href="https://www.annualcreditreport.com/" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>Federal Annual Free Credit Report</span>
-          </a>
-          <a href="https://consumer.risk.lexisnexis.com/consumer" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>LexisNexis Consumer Report</span>
-          </a>
-          <a href="https://www.donotcall.gov/index.html" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>National Do Not Call Registry</span>
-          </a>
-          <a href="https://www.sco.ca.gov/search_upd.html" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>CA Unclaimed Property</span>
-          </a>
-          <a href="https://treasuryhunt.gov/savings-bonds/treasury-hunt/" target="_blank" rel="noopener" class="resource-link">
-            <span class="resource-link-arrow">→</span>
-            <span>US Treasury Unclaimed Bonds</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- LANDING PAGES + REFERRALS -->
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="resource-card">
-          <div class="resource-card-header">
-            <div class="resource-card-icon">
-              <svg viewBox="0 0 18 18"><path d="M9 2l1.8 5.4H17l-5 3.6 1.9 5.8L9 13.4l-4.9 3.4L6 11 1 7.4h6.2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+        <div class="resources-grid">
+          <section aria-labelledby="internal-heading">
+            <div class="resource-card">
+              <div class="resource-card-header">
+                <div class="resource-card-icon" aria-hidden="true"><svg viewBox="0 0 18 18"><rect x="2" y="2" width="14" height="14" rx="3"/><path d="M6 9h6M9 6v6" stroke-linecap="round"/></svg></div>
+                <h2 class="resource-card-title" id="internal-heading">INTERNAL LINKS</h2>
+              </div>
+              <ul class="resource-links" role="list">
+                <li><a href="https://help.exosolutions.us/support/home" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Internal Ticket System (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Internal Ticket System</span></a></li>
+                <li><a href="https://exosphere.freshdesk.com/support/home" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Internal Ticket System Alternative URL (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Internal Ticket System (Alt URL)</span></a></li>
+                <li><a href="https://portal.pii-protect.com/#/login?brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Training Portal Login (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Training Portal Login</span></a></li>
+              </ul>
             </div>
-            <div class="resource-card-title">LANDING PAGES</div>
-          </div>
-          <div class="resource-links">
-            <a href="https://security.pii-protect.com/security/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>Security Training Landing Page</span>
-            </a>
-            <a href="https://security.pii-protect.com/dark-web/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>Dark Web Landing Page</span>
-            </a>
-            <a href="https://security.pii-protect.com/cybersecurity/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>BPP Landing Page</span>
-            </a>
-            <a href="https://security.pii-protect.com/smb-breach-cost-calculator/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>PII Breach Cost Calculator</span>
-            </a>
-            <a href="https://security.pii-protect.com/healthcare-breach-cost-calculator/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>PHI Breach Cost Calculator</span>
-            </a>
-            <a href="https://security.pii-protect.com/remote-employee-security-training/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>Remote Employee Security</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-card-header">
-            <div class="resource-card-icon">
-              <svg viewBox="0 0 18 18"><path d="M10 3H6a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V8l-4-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3v5h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </section>
+          <section aria-labelledby="consumer-heading">
+            <div class="resource-card">
+              <div class="resource-card-header">
+                <div class="resource-card-icon" aria-hidden="true"><svg viewBox="0 0 18 18"><circle cx="9" cy="6" r="3"/><path d="M3 16c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-linecap="round"/></svg></div>
+                <h2 class="resource-card-title" id="consumer-heading">CONSUMER LINKS</h2>
+              </div>
+              <ul class="resource-links" role="list">
+                <li><a href="https://www.equifax.com/personal/credit-report-services/credit-freeze/" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Equifax Credit Freeze (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Equifax Credit Freeze</span></a></li>
+                <li><a href="https://www.experian.com/freeze/center.html" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Experian Credit Freeze (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Experian Credit Freeze</span></a></li>
+                <li><a href="https://www.transunion.com/credit-freeze" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="TransUnion Credit Freeze (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>TransUnion Credit Freeze</span></a></li>
+                <li><a href="https://www.annualcreditreport.com/" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Federal Annual Free Credit Report (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Federal Annual Free Credit Report</span></a></li>
+                <li><a href="https://consumer.risk.lexisnexis.com/consumer" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="LexisNexis Consumer Report (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>LexisNexis Consumer Report</span></a></li>
+                <li><a href="https://www.donotcall.gov/index.html" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="National Do Not Call Registry (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>National Do Not Call Registry</span></a></li>
+                <li><a href="https://www.sco.ca.gov/search_upd.html" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="California Unclaimed Property (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>CA Unclaimed Property</span></a></li>
+                <li><a href="https://treasuryhunt.gov/savings-bonds/treasury-hunt/" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="US Treasury Unclaimed Bonds (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>US Treasury Unclaimed Bonds</span></a></li>
+              </ul>
             </div>
-            <div class="resource-card-title">REFERRAL LINKS</div>
-          </div>
-          <div class="resource-links">
-            <a href="https://imazing.o67m.net/vNM1de" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>iMazing iPhone Backup</span>
-            </a>
-            <a href="https://referworkspace.app.goo.gl/XYGn" target="_blank" rel="noopener" class="resource-link">
-              <span class="resource-link-arrow">→</span>
-              <span>Google Workspace</span>
-            </a>
+          </section>
+          <div class="col-stack">
+            <section aria-labelledby="landing-heading">
+              <div class="resource-card">
+                <div class="resource-card-header">
+                  <div class="resource-card-icon" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M9 2l1.8 5.4H17l-5 3.6 1.9 5.8L9 13.4l-4.9 3.4L6 11 1 7.4h6.2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                  <h2 class="resource-card-title" id="landing-heading">LANDING PAGES</h2>
+                </div>
+                <ul class="resource-links" role="list">
+                  <li><a href="https://security.pii-protect.com/security/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Security Training Landing Page (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Security Training Landing Page</span></a></li>
+                  <li><a href="https://security.pii-protect.com/dark-web/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Dark Web Landing Page (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Dark Web Landing Page</span></a></li>
+                  <li><a href="https://security.pii-protect.com/cybersecurity/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="BPP Landing Page (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>BPP Landing Page</span></a></li>
+                  <li><a href="https://security.pii-protect.com/smb-breach-cost-calculator/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="PII Breach Cost Calculator (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>PII Breach Cost Calculator</span></a></li>
+                  <li><a href="https://security.pii-protect.com/healthcare-breach-cost-calculator/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="PHI Breach Cost Calculator (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>PHI Breach Cost Calculator</span></a></li>
+                  <li><a href="https://security.pii-protect.com/remote-employee-security-training/?email=robert.gonzales@exosolutions.us&brand_key=8net4" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Remote Employee Security Training (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Remote Employee Security</span></a></li>
+                </ul>
+              </div>
+            </section>
+            <section aria-labelledby="referral-heading">
+              <div class="resource-card">
+                <div class="resource-card-header">
+                  <div class="resource-card-icon" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M10 3H6a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V8l-4-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3v5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                  <h2 class="resource-card-title" id="referral-heading">REFERRAL LINKS</h2>
+                </div>
+                <ul class="resource-links" role="list">
+                  <li><a href="https://imazing.o67m.net/vNM1de" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="iMazing iPhone Backup (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>iMazing iPhone Backup</span></a></li>
+                  <li><a href="https://referworkspace.app.goo.gl/XYGn" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Google Workspace (opens in new tab)"><span class="resource-link-arrow" aria-hidden="true">→</span><span>Google Workspace</span></a></li>
+                </ul>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-socials">
-      <a href="https://www.facebook.com/exosolutionsus" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/exosphere-solutions/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@ExosphereSolutions" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#09080f"/></svg>
-      </a>
-      <a href="https://www.yelp.com/biz/exosphere-solutions-martinez" target="_blank" rel="noopener" class="footer-social" aria-label="Yelp">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-      </a>
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <nav class="footer-socials" aria-label="Social media links">
+        <a href="https://www.facebook.com/exosolutionsus" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Exosphere Solutions on Facebook (opens in new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.youtube.com/@ExosphereSolutions" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Exosphere Solutions on YouTube (opens in new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#09080f"/></svg></a>
+        <a href="https://www.yelp.com/biz/exosphere-solutions-martinez" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Exosphere Solutions on Yelp (opens in new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></a>
+      </nav>
+      <p>© Exosphere Solutions. All rights reserved.</p>
     </div>
-    <p>© Exosphere Solutions. All rights reserved.</p>
   </footer>
-
+  <script>function toggleMenu(btn){const nav=document.getElementById('mobile-nav');const isOpen=nav.classList.toggle('open');btn.setAttribute('aria-expanded',isOpen);nav.setAttribute('aria-hidden',!isOpen);}</script>
 </body>
 </html>
