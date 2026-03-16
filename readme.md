@@ -3,5 +3,5 @@ Hosted on Azure as a Static Web App using Github Pipeline for Deployment <br>
 https://exosolutions.us <br>
 https://exoconsults.com <br>
 AI Used to Help With CSS <br>
-[![ChatGPT](https://custom-icon-badges.demolab.com/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#) <br>
+[![ChatGPT](https://custom-icon-badges.demolab.com/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
 [![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#) <br>
